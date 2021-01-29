@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do App</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <header></header>
+    <main class="main-container">
+        <h1>TO-DO</h1>
+        <div class="input-container">
+            <input id="addTask" class="add-task" type="text" placeholder="Create a new task..." onkeypress="handlePress(event)">
+        </div>
+        
+        <div>
+            <ul id="taskList" class="tasks">
+                <li id="lastItem" class="last-item">
+                    <p>5 items left</p>
+                    <p>Clear Completed</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="task-states">
+            <ul>
+                <li class="taskstate-active">All</li>
+                <li>Active</li>
+                <li>Completed</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>Drag and drop to reorder list</p>
+    </footer>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

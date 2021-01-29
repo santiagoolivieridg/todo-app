@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+:root {
+  --tasks: hsl(235, 24%, 19%);
+  --main-text: hsl(234, 39%, 85%);
+  --hover: hsl(236, 33%, 92%);
+  --secondary: hsl(234, 11%, 52%);
+  --details: hsl(233, 14%, 35%);
+  --separator: hsl(237, 14%, 26%);
+  --gradient: linear-gradient(
+    90deg,
+    hsl(192, 100%, 67%) 0%,
+    hsl(280, 87%, 65%) 100%
+  );
+  --links: hsl(220, 98%, 61%);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  background-color: hsl(235, 21%, 11%);
+}
+
+header {
+  height: 200px;
+  background: url(images/bg-mobile-dark.jpg);
+  background-size: cover;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+  margin-right: 25px;
+  position: relative;
+  bottom: 150px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+
+.add-task {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  color: var(--secondary);
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin: 25px 0px 15px 0px;
+}
+
+.add-task:focus {
+  outline: none;
+  box-shadow: 0px 0px 4px 2px var(--secondary) inset;
+}
+
+.tasks li {
+  color: var(--main-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tasks li {
+  border-bottom: 1px solid var(--separator);
+}
+
+.tasks li:first-child {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.tasks li:last-child {
+  border-radius: 0px 0px 6px 6px;
+  border-bottom: none;
+}
+
+.task-states {
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.task-states li:hover,
+.last-item p:last-child:hover {
+  color: var(--hover);
+  cursor: pointer;
+}
+
+.task-states ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.task-states ul li:nth-child(2) {
+  margin: 0px 10px;
+}
+
+.taskstate-active,
+ul li.taskstate-active:hover {
+  color: var(--links);
+}
+
+.last-item p,
+.task-states {
+  color: var(--secondary);
+}
+
+.add-task,
+.tasks li,
+.task-states {
+  background-color: var(--tasks);
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+/*Checkbox*/
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container p {
+  line-height: 1.2em;
+  margin: 5px 10px 0px 0px;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  transform: translateY(-50%);
+  border: 1px solid var(--details);
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  border: 1px solid var(--hover);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background: var(--gradient);
+  border: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.checked-text {
+  color: var(--secondary);
+  text-decoration: line-through;
+}
+
+.delete-task {
+  background: url(images/icon-cross.svg) no-repeat right center;
+  width: 25px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  color: var(--details);
+  text-align: center;
+  margin-top: -120px;
+}
