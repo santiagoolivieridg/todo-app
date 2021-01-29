@@ -65,16 +65,22 @@ h1 {
   justify-content: space-between;
 }
 
-.tasks li {
+.tasks li:not(.last-item):not(.first-item) {
   border-bottom: 1px solid var(--separator);
 }
 
-.tasks li:first-child {
+.tasks li:first-child:not(.last-item),
+.first-item {
   border-radius: 6px 6px 0px 0px;
 }
 
-.tasks li:last-child {
+.first-item {
   border-radius: 0px 0px 6px 6px;
+  border-bottom: none;
+}
+
+.last-item {
+  border-radius: 6px;
   border-bottom: none;
 }
 
